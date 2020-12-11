@@ -35,12 +35,13 @@ func parsePolicy(policy string) (rune, int, int, string, error) {
 }
 
 func solve(inputPath string, validate func(rune, int, int, string) bool) (int, error) {
-	validPasswordCount := 0
 	input, err := aoc.FromFile(inputPath)
 	if err != nil {
 		return 0, err
 	}
 	defer func() { _ = input.Close() }()
+
+	validPasswordCount := 0
 	for policy, ok, err := input.ReadLine(); ok || err != nil; policy, ok, err = input.ReadLine() {
 		if err != nil {
 			return 0, err

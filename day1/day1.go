@@ -35,12 +35,13 @@ func solvePart1(inputPath string) (int, error) {
 }
 
 func solvePart2(inputPath string) (int, error) {
-	const sumTo int = 2020
 	input1, err := aoc.FromFile(inputPath)
 	if err != nil {
 		return 0, err
 	}
 	defer func() { _ = input1.Close() }()
+
+	const sumTo int = 2020
 	for text, ok, err := input1.ReadLine(); ok || err != nil; text, ok, err = input1.ReadLine() {
 		expense, err := strconv.Atoi(text)
 		if err != nil {
