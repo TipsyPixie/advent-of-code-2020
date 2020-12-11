@@ -17,17 +17,6 @@ func parsePassport(passport string) map[string]string {
 	return attributes
 }
 
-func validatePassport(passport string) bool {
-	requiredAttributes := []string{"byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"}
-	attributes := parsePassport(passport)
-	for _, requiredAttribute := range requiredAttributes {
-		if _, hasAttribute := attributes[requiredAttribute]; !hasAttribute {
-			return false
-		}
-	}
-	return true
-}
-
 func solve(inputPath string, validate func(string) bool) (int, error) {
 	input, err := aoc.FromFile(inputPath)
 	if err != nil {
