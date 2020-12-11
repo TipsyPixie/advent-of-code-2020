@@ -1,4 +1,4 @@
-package advent_of_code_2020
+package aoc
 
 import "testing"
 

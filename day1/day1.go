@@ -1,7 +1,6 @@
 package day1
 
 import (
-	"errors"
 	"fmt"
 	aoc "github.com/TipsyPixie/advent-of-code-2020"
 	"strconv"
@@ -22,7 +21,7 @@ func solve(input aoc.Input, n int) (int, error) {
 		}
 		pairs[n-expense] = expense
 	}
-	return 0, errors.New(fmt.Sprintf("no 2 entries sum to %d", n))
+	return 0, fmt.Errorf("no 2 entries sum to %d", n)
 }
 
 func solvePart1(inputPath string) (int, error) {
@@ -57,5 +56,5 @@ func solvePart2(inputPath string) (int, error) {
 			return answer * expense, nil
 		}
 	}
-	return 0, errors.New(fmt.Sprintf("no 3 entries sum to %d", sumTo))
+	return 0, fmt.Errorf("no 3 entries sum to %d", sumTo)
 }

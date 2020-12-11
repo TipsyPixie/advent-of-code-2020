@@ -1,7 +1,6 @@
 package day2
 
 import (
-	"errors"
 	"fmt"
 	aoc "github.com/TipsyPixie/advent-of-code-2020"
 	"regexp"
@@ -15,7 +14,7 @@ func parsePolicy(policy string) (rune, int, int, string, error) {
 		return 0, 0, 0, "", err
 	}
 	if !formatOk {
-		return 0, 0, 0, "", errors.New(fmt.Sprintf("invalid policy %s", policy))
+		return 0, 0, 0, "", fmt.Errorf("invalid policy %s", policy)
 	}
 
 	splitPolicy := strings.SplitN(policy, ": ", 2)
