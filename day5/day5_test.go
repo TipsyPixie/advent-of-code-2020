@@ -1,4 +1,4 @@
-package day1
+package day5
 
 import (
 	aoc "github.com/TipsyPixie/advent-of-code-2020"

@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"io/ioutil"
 	"os"
+	"testing"
 )
 
 type Input interface {
@@ -52,4 +53,13 @@ func (input *fileInput) Close() error {
 		return err
 	}
 	return nil
+}
+
+func CommonTest(t *testing.T, f func(string) (int, error)) {
+	answer, err := f("./input.txt")
+	if err != nil {
+		t.Error(err)
+		t.FailNow()
+	}
+	t.Log(answer)
 }
