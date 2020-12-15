@@ -1,7 +1,6 @@
 package day13
 
 import (
-	"fmt"
 	aoc "github.com/TipsyPixie/advent-of-code-2020"
 	"strconv"
 	"strings"
@@ -41,6 +40,5 @@ func solvePart1(inputPath string) (int, error) {
 		}
 	}
 
-	fmt.Println(shortestWaitTime, matchedBusId)
 	return shortestWaitTime * matchedBusId, nil
 }
